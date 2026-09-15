@@ -8,9 +8,8 @@ dataset = [
 
 
 def process_item_score(item_id, scores):
-    # this function calculates avg score for an item and classifies it as high or low
-    # Safety check: returns early with default values if the score list is empty to prevent a division-by-zero crash.
-    if not len(scores):  # fixed: trigger the early return only when scores is EMPTY
+    # Safety check: returns early if score list is empty to prevent division-by-zero
+    if not len(scores):
         return {"id": item_id, "avg": 0.0, "label": "N/A"}
     avg = sum(scores) / len(scores)
     if avg > 0.5:
@@ -28,3 +27,9 @@ for item in dataset:
 for record in processed_results:
     print(record)
 
+# Import function AND test lists directly from metrics.py
+from metrics import calculate_confusion_matrix, y_true, y_pred
+
+# Call using the imported variables
+matrix = calculate_confusion_matrix(y_true, y_pred)
+print(matrix)
