@@ -40,3 +40,8 @@ def calculate_accuracy(tp, tn, fp, fn):
 
     return accuracy
 
+def calculate_precision(tp,fp):
+
+    precision = tp/tp+fp
+
+    return precision 

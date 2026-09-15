@@ -47,6 +47,7 @@ for record in processed_results:
 from metrics import (
     calculate_confusion_matrix,
     calculate_accuracy,
+    calculate_precision,
     y_true,
     y_pred
 )
@@ -67,3 +68,11 @@ accuracy = calculate_accuracy(
 )
 
 print(accuracy)
+
+# Calculate precision using TP,FP
+precision = calculate_precision(
+    matrix["TP"],
+    matrix["FP"]
+)
+
+print(precision)
