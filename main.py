@@ -3,7 +3,7 @@ dataset = [
     {"id": "item_1", "scores": [0.2, 0.4, 0.3]},
     {"id": "item_2", "scores": [0.8, 0.9, 0.7]},
     {"id": "item_3", "scores": [0.5, 0.5, 0.5]},
-    {"id": "item_4", "scores": []}
+    {"id": "item_4", "scores": []}#empty list 
 ]
 
 
@@ -48,6 +48,7 @@ from metrics import (
     calculate_confusion_matrix,
     calculate_accuracy,
     calculate_precision,
+    calculate_recall,
     y_true,
     y_pred
 )
@@ -76,3 +77,19 @@ precision = calculate_precision(
 )
 
 print(precision)
+
+# Calculate recall using TP,FN
+recall = calculate_recall(
+    matrix["TP"],
+    matrix["FN"]
+)
+
+print(recall)
+
+
+
+def F1_score(precision,recall):
+    return 2*precision*recall/(precision+recall)
+
+f1_score = F1_score(precision,recall)
+print(f1_score)

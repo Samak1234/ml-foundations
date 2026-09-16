@@ -45,3 +45,11 @@ def calculate_precision(tp,fp):
     precision = tp/(tp+fp)
 
     return precision 
+
+
+def calculate_recall(tp,fn):
+
+    recall = tp/(tp+fn)
+
+    return recall
+
