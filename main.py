@@ -49,6 +49,7 @@ from metrics import (
     calculate_accuracy,
     calculate_precision,
     calculate_recall,
+    calculate_specificity,
     y_true,
     y_pred
 )
@@ -93,3 +94,11 @@ def F1_score(precision,recall):
 
 f1_score = F1_score(precision,recall)
 print(f1_score)
+
+
+specificity = calculate_specificity(
+    matrix["TN"],
+    matrix["FP"]
+)
+
+print(specificity)
