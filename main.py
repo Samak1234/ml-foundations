@@ -1,3 +1,4 @@
+
 # Raw Dataset containing items with their respective numerical scores
 dataset = [
     {"id": "item_1", "scores": [0.2, 0.4, 0.3]},
@@ -71,7 +72,8 @@ accuracy = calculate_accuracy(
     matrix["FN"]
 )
 
-print(accuracy)
+print("accuracy is as follows:", accuracy)
+
 
 # Calculate precision using TP,FP
 precision = calculate_precision(
@@ -79,7 +81,8 @@ precision = calculate_precision(
     matrix["FP"]
 )
 
-print(precision)
+print("precision is as follows:", precision)
+
 
 # Calculate recall using TP,FN
 recall = calculate_recall(
@@ -87,15 +90,15 @@ recall = calculate_recall(
     matrix["FN"]
 )
 
-print(recall)
-
+print("recall is as follows:", recall)
 
 
 def F1_score(precision,recall):
     return 2*precision*recall/(precision+recall)
 
 f1_score = F1_score(precision,recall)
-print(f1_score)
+
+print("f1 score is as follows:", f1_score)
 
 
 specificity = calculate_specificity(
@@ -103,14 +106,15 @@ specificity = calculate_specificity(
     matrix["FP"]
 )
 
-print(specificity)
+print("specificity is as follows:", specificity)
+
 
 TPR = calculate_TPR(
     matrix["TP"],
     matrix["FN"]
 )
 
-print(TPR)
+print("TPR is as follows:", TPR)
 
 
 FPR = calculate_FPR(
@@ -118,4 +122,4 @@ FPR = calculate_FPR(
     matrix["TN"]
 )
 
-print(FPR)
+print("FPR is as follows:", FPR)
