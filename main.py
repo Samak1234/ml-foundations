@@ -50,6 +50,8 @@ from metrics import (
     calculate_precision,
     calculate_recall,
     calculate_specificity,
+    calculate_TPR,
+    calculate_FPR,
     y_true,
     y_pred
 )
@@ -102,3 +104,18 @@ specificity = calculate_specificity(
 )
 
 print(specificity)
+
+TPR = calculate_TPR(
+    matrix["TP"],
+    matrix["FN"]
+)
+
+print(TPR)
+
+
+FPR = calculate_FPR(
+    matrix["FP"],
+    matrix["TN"]
+)
+
+print(FPR)

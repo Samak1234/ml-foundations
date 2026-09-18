@@ -53,3 +53,22 @@ def calculate_recall(tp,fn):
 
     return recall
 
+def calculate_specificity(tn,fp):
+
+    specificity = tn/(tn+fp)
+
+    return specificity
+
+def calculate_TPR(tp,fn):
+
+    TPR = tp/(tp+fn)
+
+    return TPR
+
+def calculate_FPR(fp,tn):
+
+    FPR = fp/(fp + tn)
+
+    return FPR 
+
+
