@@ -53,6 +53,10 @@ def calculate_recall(tp,fn):
 
     return recall
 
+def calculate_f1_score(precision,recall):
+
+    return 2*precision*recall/(precision+recall)
+
 def calculate_specificity(tn,fp):
 
     specificity = tn/(tn+fp)

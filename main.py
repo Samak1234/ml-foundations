@@ -51,6 +51,7 @@ from metrics import (
     calculate_precision,
     calculate_recall,
     calculate_specificity,
+    calculate_f1_score,
     calculate_TPR,
     calculate_FPR,
     y_true,
@@ -93,11 +94,10 @@ recall = calculate_recall(
 print("recall is as follows:", recall)
 
 
-def F1_score(precision,recall):
-    return 2*precision*recall/(precision+recall)
+
 
 #Calculate F1_score
-f1_score = F1_score(precision,recall)
+f1_score = calculate_f1_score(precision,recall)
 
 print("f1 score is as follows:", f1_score)
 
