@@ -96,11 +96,12 @@ print("recall is as follows:", recall)
 def F1_score(precision,recall):
     return 2*precision*recall/(precision+recall)
 
+#Calculate F1_score
 f1_score = F1_score(precision,recall)
 
 print("f1 score is as follows:", f1_score)
 
-
+#Calculate specificity
 specificity = calculate_specificity(
     matrix["TN"],
     matrix["FP"]
@@ -108,7 +109,7 @@ specificity = calculate_specificity(
 
 print("specificity is as follows:", specificity)
 
-
+#Calculate TPR
 TPR = calculate_TPR(
     matrix["TP"],
     matrix["FN"]
@@ -116,7 +117,7 @@ TPR = calculate_TPR(
 
 print("TPR is as follows:", TPR)
 
-
+#Calculate FPR
 FPR = calculate_FPR(
     matrix["FP"],
     matrix["TN"]
