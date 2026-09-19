@@ -1,4 +1,3 @@
-
 # Raw Dataset containing items with their respective numerical scores
 dataset = [
     {"id": "item_1", "scores": [0.2, 0.4, 0.3]},
@@ -54,6 +53,7 @@ from metrics import (
     calculate_f1_score,
     calculate_TPR,
     calculate_FPR,
+    calculate_all_metrics,
     y_true,
     y_pred
 )
@@ -94,8 +94,6 @@ recall = calculate_recall(
 print("recall is as follows:", recall)
 
 
-
-
 #Calculate F1_score
 f1_score = calculate_f1_score(precision,recall)
 
@@ -124,3 +122,9 @@ FPR = calculate_FPR(
 )
 
 print("FPR is as follows:", FPR)
+
+
+# Calculate all metrics
+all_metrics = calculate_all_metrics(matrix)
+
+print("All metrics are as follows:", all_metrics)
