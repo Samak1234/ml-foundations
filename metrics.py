@@ -42,12 +42,20 @@ def calculate_accuracy(tp, tn, fp, fn):
 
 def calculate_precision(tp,fp):
 
+    if tp+fp==0:
+
+        return 0.0
+
     precision = tp/(tp+fp)
 
     return precision 
 
 
 def calculate_recall(tp,fn):
+
+    if tp+fn == 0:
+
+        return 0.0
 
     recall = tp/(tp+fn)
 
