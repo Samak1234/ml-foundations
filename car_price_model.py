@@ -40,3 +40,26 @@ X = X.drop("Car_Name", axis=1)
 
 print("\nFeatures after removing Car_Name:")
 print(X.head())
+
+#Convert categorical columns into numerical columns 
+
+X = pd.get_dummies(X,drop_first =True)
+
+print("\n Features after encoding")
+print(X.head())
+
+print("\n Features columns")
+print(X.columns)
+
+print("\n Features data types")
+print(X.dtypes)
+
+# Split the dataset into training (80%) and testing (20%) sets
+from sklearn.model_selection import train_test_split
+
+X_train, X_test , y_train, y_test = train_test_split(
+    X,
+    y,
+    test_size=0.2,
+    random_state=42
+)
