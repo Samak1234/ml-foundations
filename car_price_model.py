@@ -34,3 +34,9 @@ print(X.head())
 
 print("\nTarget:")
 print(y.head())
+
+# Remove the car name column
+X = X.drop("Car_Name", axis=1)
+
+print("\nFeatures after removing Car_Name:")
+print(X.head())
