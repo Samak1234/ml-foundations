@@ -75,3 +75,12 @@ model = LinearRegression()
 model.fit(X_train, y_train)
 
 print("Model training completed!")
+
+#Predict selling prices using the test data
+y_pred = model.predict(X_test)
+
+#Display the predicted selling prices 
+print("\nPredicted selling prices:")
+print(y_pred)
+
+
