@@ -83,4 +83,11 @@ y_pred = model.predict(X_test)
 print("\nPredicted selling prices:")
 print(y_pred)
 
+# Compare actual and predicted selling prices
+results = pd.DataFrame({
+    "Actual Price": y_test,
+    "Predicted Price": y_pred
+})
 
+print("\nActual vs Predicted Prices:")
+print(results.head(10))
