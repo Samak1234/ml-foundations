@@ -91,3 +91,20 @@ results = pd.DataFrame({
 
 print("\nActual vs Predicted Prices:")
 print(results.head(10))
+
+
+# Import regression evaluation metrics
+from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+
+# Calculate evaluation metrics
+mae = mean_absolute_error(y_test, y_pred)
+mse = mean_squared_error(y_test, y_pred)
+rmse = mse ** 0.5
+r2 = r2_score(y_test, y_pred)
+
+# Display model performance
+print("\nModel Evaluation Results:")
+print("MAE:", mae)
+print("MSE:", mse)
+print("RMSE:", rmse)
+print("R² Score:", r2)
