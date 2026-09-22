@@ -2,7 +2,6 @@ import pandas as pd
 
 df = pd.read_csv("car_prediction_data.csv")
 
-
 print(df.head())
 print(df.shape)
 print(df.columns)
@@ -108,3 +107,13 @@ print("MAE:", mae)
 print("MSE:", mse)
 print("RMSE:", rmse)
 print("R² Score:", r2)
+
+results = pd.DataFrame({
+    "Actual Price": y_test,
+    "Predicted Price":y_pred
+})
+
+results["Error"] = results ["Actual Price"] - results["Predicted Price"]
+
+print("\nPrediction Errors:")
+print(results.head(10))
