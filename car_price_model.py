@@ -113,7 +113,14 @@ results = pd.DataFrame({
     "Predicted Price":y_pred
 })
 
+# Calculate the difference between actual and predicted prices
 results["Error"] = results ["Actual Price"] - results["Predicted Price"]
 
 print("\nPrediction Errors:")
+print(results.head(10))
+
+# Calculate the magnitude of each prediction error 
+results["Absolute Error"] = results["Error"].abs()
+
+print("\nPrediction Errors with Absolute Values:")
 print(results.head(10))
