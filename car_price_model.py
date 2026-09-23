@@ -124,3 +124,12 @@ results["Absolute Error"] = results["Error"].abs()
 
 print("\nPrediction Errors with Absolute Values:")
 print(results.head(10))
+
+#Find the five predictions with the largest absolute errors 
+largest_errors = results.sort_values(
+    by="Absolute Error",
+    ascending=False
+)
+
+print("\nTop 5 Largest Prediction Errors:")
+print(largest_errors.head(5))
