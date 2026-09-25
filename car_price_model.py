@@ -133,3 +133,13 @@ largest_errors = results.sort_values(
 
 print("\nTop 5 Largest Prediction Errors:")
 print(largest_errors.head(5))
+
+
+# Get the row indexes of the five largest prediction errors
+worst_indices = largest_errors.head(5).index
+
+# Use those indexes to find the original car information
+worst_cars = df.loc[worst_indices]
+
+print("\nCars with the Largest Prediction Errors:")
+print(worst_cars)
