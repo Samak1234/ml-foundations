@@ -143,3 +143,16 @@ worst_cars = df.loc[worst_indices]
 
 print("\nCars with the Largest Prediction Errors:")
 print(worst_cars)
+
+import matplotlib.pyplot as plt
+
+# Plot actual prices vs predicted prices
+plt.scatter(y_test,y_pred)
+
+plt.xlabel("Actual Price")
+plt.ylabel("Predicted Price")
+plt.title("Actual vs predicted")
+
+plt.show()
+
+
