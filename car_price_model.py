@@ -149,10 +149,18 @@ import matplotlib.pyplot as plt
 # Plot actual prices vs predicted prices
 plt.scatter(y_test,y_pred)
 
+# Perfect prediction line
+min_price = min(y_test.min(), y_pred.min())
+max_price = max(y_test.max(), y_pred.max())
+
+plt.plot(
+    [min_price, max_price],
+    [min_price, max_price]
+)
+
 plt.xlabel("Actual Price")
 plt.ylabel("Predicted Price")
 plt.title("Actual vs predicted")
 
 plt.show()
-
 
