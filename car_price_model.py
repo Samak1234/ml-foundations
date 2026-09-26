@@ -164,3 +164,14 @@ plt.title("Actual vs predicted")
 
 plt.show()
 
+# Plot prediction errors (residuals)
+plt.scatter(y_pred, results["Error"])
+
+# Add a horizontal line at zero error
+plt.axhline(y=0)
+
+plt.xlabel("Predicted Price")
+plt.ylabel("Error")
+plt.title("Residual Plot")
+
+plt.show()
