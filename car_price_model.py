@@ -175,3 +175,17 @@ plt.ylabel("Error")
 plt.title("Residual Plot")
 
 plt.show()
+
+# Check how each feature affects the Linear Regression prediction
+coefficients = pd.DataFrame({
+    "Feature": X.columns,
+    "Coefficient": model.coef_
+})
+
+print("\nLinear Regression Coefficients:")
+print(
+    coefficients.sort_values(
+        by="Coefficient",
+        ascending=False
+    )
+)
