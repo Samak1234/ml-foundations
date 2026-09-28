@@ -189,3 +189,8 @@ print(
         ascending=False
     )
 )
+
+
+
+df["Car_Age"]= df["Year"].max()-df["Year"]
+print(df[["Year", "Car_Age"]].head())
