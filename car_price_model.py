@@ -94,6 +94,12 @@ model.fit(X_train, y_train)
 
 print("\nModel training completed!")
 
+# Decision Tree Regression
+from sklearn.tree import DecisionTreeRegressor
+
+tree_model = DecisionTreeRegressor(random_state=42)
+tree_model.fit(X_train, y_train)
+
 
 # Predict selling prices
 y_pred = model.predict(X_test)
