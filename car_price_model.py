@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
+from sklearn.tree import DecisionTreeRegressor
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
 
@@ -85,26 +86,23 @@ X_train, X_test, y_train, y_test = train_test_split(
 )
 
 
+# -----------------------------
+# Linear Regression
+# -----------------------------
+
 # Create Linear Regression model
 model = LinearRegression()
-
 
 # Train the model
 model.fit(X_train, y_train)
 
-print("\nModel training completed!")
-
-# Decision Tree Regression
-from sklearn.tree import DecisionTreeRegressor
-
-tree_model = DecisionTreeRegressor(random_state=42)
-tree_model.fit(X_train, y_train)
+print("\nLinear Regression training completed!")
 
 
 # Predict selling prices
 y_pred = model.predict(X_test)
 
-print("\nPredicted selling prices:")
+print("\nLinear Regression Predictions:")
 print(y_pred)
 
 
@@ -118,13 +116,13 @@ print("\nActual vs Predicted Prices:")
 print(results.head(10))
 
 
-# Calculate evaluation metrics
+# Calculate Linear Regression evaluation metrics
 mae = mean_absolute_error(y_test, y_pred)
 mse = mean_squared_error(y_test, y_pred)
 rmse = mse ** 0.5
 r2 = r2_score(y_test, y_pred)
 
-print("\nModel Evaluation Results:")
+print("\nLinear Regression Evaluation Results:")
 print("MAE:", mae)
 print("MSE:", mse)
 print("RMSE:", rmse)
@@ -158,9 +156,8 @@ print("\nTop 5 Largest Prediction Errors:")
 print(largest_errors.head(5))
 
 
-# Get the original car details for the five largest errors
+# Get original car details for the five largest errors
 worst_indices = largest_errors.head(5).index
-
 worst_cars = df.loc[worst_indices]
 
 print("\nCars with the Largest Prediction Errors:")
@@ -212,3 +209,77 @@ print(
         ascending=False
     )
 )
+
+
+# -----------------------------
+# Decision Tree Regressor
+# -----------------------------
+
+# Create Decision Tree model
+tree_model = DecisionTreeRegressor(
+    random_state=42
+)
+
+# Train Decision Tree model
+tree_model.fit(X_train, y_train)
+
+print("\nDecision Tree training completed!")
+
+
+# Make Decision Tree predictions
+tree_pred = tree_model.predict(X_test)
+
+print("\nDecision Tree Predictions:")
+print(tree_pred)
+
+
+# Calculate Decision Tree evaluation metrics
+tree_mae = mean_absolute_error(
+    y_test,
+    tree_pred
+)
+
+tree_mse = mean_squared_error(
+    y_test,
+    tree_pred
+)
+
+tree_rmse = tree_mse ** 0.5
+
+tree_r2 = r2_score(
+    y_test,
+    tree_pred
+)
+
+print("\nDecision Tree Evaluation Results:")
+print("MAE:", tree_mae)
+print("MSE:", tree_mse)
+print("RMSE:", tree_rmse)
+print("R² Score:", tree_r2)
+
+
+# -----------------------------
+# Model Comparison
+# -----------------------------
+
+comparison = pd.DataFrame({
+    "Model": [
+        "Linear Regression",
+        "Decision Tree"
+    ],
+    "MAE": [
+        mae,
+        tree_mae
+    ],
+    "RMSE": [
+        rmse,
+        tree_rmse
+    ],
+    "R²": [
+        r2,
+        tree_r2
+    ]
+})
+
+print("\nModel Comparison:")
+print(comparison)
