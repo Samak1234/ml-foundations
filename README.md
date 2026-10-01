@@ -1,4 +1,4 @@
-# ml-foundations
+# used-car-price-prediction
 
 Beginner machine learning project for predicting used-car selling prices.
 
