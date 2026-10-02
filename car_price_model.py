@@ -294,3 +294,5 @@ forest_model = RandomForestRegressor(
 )
 
 forest_model.fit(X_train, y_train)
+
+forest_pred = forest_model.predict(X_test)
