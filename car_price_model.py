@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
-
+from sklearn.ensemble import RandomForestRegressor
 
 # Load dataset
 df = pd.read_csv("car_prediction_data.csv")
@@ -283,3 +283,4 @@ comparison = pd.DataFrame({
 
 print("\nModel Comparison:")
 print(comparison)
+
