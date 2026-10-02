@@ -281,6 +281,9 @@ print("MSE:", forest_mse)
 print("RMSE:", forest_rmse)
 print("R² Score:", forest_r2)
 
+# Predict on test data
+forest_pred = forest_model.predict(X_test)
+
 # -----------------------------
 # Model Comparison
 # -----------------------------
@@ -310,3 +313,4 @@ comparison = pd.DataFrame({
 
 print("\nModel Comparison:")
 print(comparison)
+
