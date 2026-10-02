@@ -284,3 +284,12 @@ comparison = pd.DataFrame({
 print("\nModel Comparison:")
 print(comparison)
 
+# -----------------------------
+# Random Forest Regressor
+# -----------------------------
+
+# Create Random Forest model
+forest_model = RandomForestRegressor(
+    random_state=42
+)
+
