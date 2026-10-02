@@ -263,6 +263,7 @@ print("R² Score:", tree_r2)
 
 # Create Random Forest model
 forest_model = RandomForestRegressor(
+    max_depth=5,
     random_state=42
 )
 
