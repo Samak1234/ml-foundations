@@ -257,33 +257,6 @@ print("MSE:", tree_mse)
 print("RMSE:", tree_rmse)
 print("R² Score:", tree_r2)
 
-
-# -----------------------------
-# Model Comparison
-# -----------------------------
-
-comparison = pd.DataFrame({
-    "Model": [
-        "Linear Regression",
-        "Decision Tree"
-    ],
-    "MAE": [
-        mae,
-        tree_mae
-    ],
-    "RMSE": [
-        rmse,
-        tree_rmse
-    ],
-    "R²": [
-        r2,
-        tree_r2
-    ]
-})
-
-print("\nModel Comparison:")
-print(comparison)
-
 # -----------------------------
 # Random Forest Regressor
 # -----------------------------
@@ -307,3 +280,33 @@ print("MAE:", forest_mae)
 print("MSE:", forest_mse)
 print("RMSE:", forest_rmse)
 print("R² Score:", forest_r2)
+
+# -----------------------------
+# Model Comparison
+# -----------------------------
+
+comparison = pd.DataFrame({
+    "Model": [
+        "Linear Regression",
+        "Decision Tree",
+        "Random Forest"
+    ],
+    "MAE": [
+        mae,
+        tree_mae,
+        forest_mae
+    ],
+    "RMSE": [
+        rmse,
+        tree_rmse,
+        forest_rmse
+    ],
+    "R²": [
+        r2,
+        tree_r2,
+        forest_r2
+    ]
+})
+
+print("\nModel Comparison:")
+print(comparison)
