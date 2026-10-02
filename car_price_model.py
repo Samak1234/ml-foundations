@@ -293,3 +293,4 @@ forest_model = RandomForestRegressor(
     random_state=42
 )
 
+forest_model.fit(X_train, y_train)
