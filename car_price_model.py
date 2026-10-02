@@ -296,3 +296,14 @@ forest_model = RandomForestRegressor(
 forest_model.fit(X_train, y_train)
 
 forest_pred = forest_model.predict(X_test)
+
+forest_mae = mean_absolute_error(y_test, forest_pred)
+forest_mse = mean_squared_error(y_test, forest_pred)
+forest_rmse = forest_mse ** 0.5
+forest_r2 = r2_score(y_test, forest_pred)
+
+print("\nRandom Forest Evaluation Results:")
+print("MAE:", forest_mae)
+print("MSE:", forest_mse)
+print("RMSE:", forest_rmse)
+print("R² Score:", forest_r2)
