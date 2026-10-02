@@ -266,24 +266,40 @@ forest_model = RandomForestRegressor(
     random_state=42
 )
 
+# Train Random Forest model
 forest_model.fit(X_train, y_train)
 
+
+# Predict on training data
+forest_train_pred = forest_model.predict(X_train)
+
+# Evaluate training performance
+forest_train_mae = mean_absolute_error(y_train, forest_train_pred)
+forest_train_mse = mean_squared_error(y_train, forest_train_pred)
+forest_train_rmse = forest_train_mse ** 0.5
+forest_train_r2 = r2_score(y_train, forest_train_pred)
+
+print("\nRandom Forest Training Results:")
+print("MAE:", forest_train_mae)
+print("MSE:", forest_train_mse)
+print("RMSE:", forest_train_rmse)
+print("R² Score:", forest_train_r2)
+
+
+# Predict on test data
 forest_pred = forest_model.predict(X_test)
 
+# Evaluate test performance
 forest_mae = mean_absolute_error(y_test, forest_pred)
 forest_mse = mean_squared_error(y_test, forest_pred)
 forest_rmse = forest_mse ** 0.5
 forest_r2 = r2_score(y_test, forest_pred)
 
-print("\nRandom Forest Evaluation Results:")
+print("\nRandom Forest Test Results:")
 print("MAE:", forest_mae)
 print("MSE:", forest_mse)
 print("RMSE:", forest_rmse)
 print("R² Score:", forest_r2)
-
-# Predict on test data
-forest_pred = forest_model.predict(X_test)
-
 # -----------------------------
 # Model Comparison
 # -----------------------------
